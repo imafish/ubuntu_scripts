@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="scrollback_lines" mtime="1407006299" type="int" value="8192"/>
+	<entry name="background_darkness" mtime="1407008643" type="float" value="0.94474250078201294"/>
+	<entry name="background_type" mtime="1407006263" type="string">
+		<stringvalue>transparent</stringvalue>
+	</entry>
+	<entry name="use_theme_colors" mtime="1407006109" type="bool" value="false"/>
+	<entry name="default_size_rows" mtime="1407006106" type="int" value="40"/>
+	<entry name="use_custom_default_size" mtime="1407006005" type="bool" value="true"/>
+	<entry name="allow_bold" mtime="1407005999" type="bool" value="true"/>
+	<entry name="font" mtime="1407005551" type="string">
+		<stringvalue>Liberation Mono 11</stringvalue>
+	</entry>
+	<entry name="use_system_font" mtime="1407005551" type="bool" value="false"/>
+	<entry name="palette" mtime="1407006253" type="string">
+		<stringvalue>#000000000000:#AAAA00000000:#0000AAAA0000:#AAAA55550000:#00000000AAAA:#AAAA0000AAAA:#0000AAAAAAAA:#AAAAAAAAAAAA:#555555555555:#FFFF55555555:#5555FFFF5555:#FFFFFFFF5555:#55555555FFFF:#FFFF5555FFFF:#5555FFFFFFFF:#FFFFFFFFFFFF</stringvalue>
+	</entry>
+	<entry name="alternate_screen_scroll" mtime="1407005551" type="bool" value="true"/>
+	<entry name="background_color" mtime="1407006140" type="string">
+		<stringvalue>#000000000000</stringvalue>
+	</entry>
+	<entry name="visible_name" mtime="1407005551" type="string">
+		<stringvalue>Default</stringvalue>
+	</entry>
+	<entry name="bold_color" mtime="1407005551" type="string">
+		<stringvalue>#000000000000</stringvalue>
+	</entry>
+	<entry name="foreground_color" mtime="1407006140" type="string">
+		<stringvalue>#AAAAAAAAAAAA</stringvalue>
+	</entry>
+</gconf>

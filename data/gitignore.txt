@@ -1,0 +1,51 @@
+#C++ intermediate files
+.libs
+*.so
+*.so.[0-9]*
+*.a
+*.o
+*.mk
+*.obj
+*.class
+
+#VC++ solutions and project files
+*.ncb
+*.idb
+*.pdb
+*.aps
+*.pch
+*.opensdf
+*.ipch
+*.sdf
+*.user
+*.suo
+BuildLog.htm
+Debug/
+Release/
+
+#text editor intermediate files
+*.bak
+*~
+#*#
+.*~
+.#*
+.*.swp
+
+#Windows temporary files
+Thumbs.db
+
+#Linux temporary files
+.DS_Store
+
+
+#Miscellaneous files
+*.al
+*.pyc
+*.pyo
+*.pyc
+*.lo
+*.la
+*.scons
+*.rules
+SConstruct
+

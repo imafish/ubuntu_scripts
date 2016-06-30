@@ -1,0 +1,40 @@
+au BufRead,BufNewFile *.rb     set shiftwidth=2
+au BufRead,BufNewFile *.rb     set tabstop=2
+
+au BufRead,BufNewFile *.h     set shiftwidth=2
+au BufRead,BufNewFile *.h     set tabstop=2
+
+au BufRead,BufNewFile *.hpp     set shiftwidth=2
+au BufRead,BufNewFile *.hpp     set tabstop=2
+
+au BufRead,BufNewFile *.c     set shiftwidth=2
+au BufRead,BufNewFile *.c     set tabstop=2
+
+au BufRead,BufNewFile *.cpp     set shiftwidth=2
+au BufRead,BufNewFile *.cpp     set tabstop=2
+
+au BufRead,BufNewFile *.cc     set shiftwidth=2
+au BufRead,BufNewFile *.cc     set tabstop=2
+
+au BufRead,BufNewFile *.java     set shiftwidth=2
+au BufRead,BufNewFile *.java     set tabstop=2
+
+au BufRead,BufNewFile *.sh     set shiftwidth=2
+au BufRead,BufNewFile *.sh     set tabstop=2
+
+set background=dark
+set smarttab
+set expandtab
+set mouse=a
+set nocompatible
+set nu
+set hlsearch
+syntax on
+filetype plugin indent on
+colorscheme desert
+
+augroup filetype
+  au! BufRead,BufNewFile,BufEnter *Makefile*,*makefile*,*.mk set filetype=make
+augroup END
+" In Makefiles, don't expand tabs to spaces, since we need the actual tabs
+autocmd FileType make set noexpandtab
