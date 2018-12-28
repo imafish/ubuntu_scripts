@@ -3,13 +3,9 @@
 ########################################################
 # set up bashrc -- customized prompt
 
-
+# show avatar
 cp ../data/block.txt ~/.block.txt
-echo 'if [ "$PS1" ]; then' >> ~/.bashrc
-echo '  cat .block.txt' >> ~/.bashrc
-echo '  echo' >> ~/.bashrc
-echo '  echo' >> ~/.bashrc
-echo 'fi' >> ~/.bashrc
+cat ../data/avatar.sh >> ~/.bashrc
 
 
 prompt_line=$(grep -n '^#force_color_prompt=yes' ~/.bashrc | grep -o '^[[:digit:]]*')
