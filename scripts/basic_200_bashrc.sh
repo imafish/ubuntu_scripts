@@ -7,6 +7,9 @@
 cp ../data/block.txt ~/.block.txt
 cat ../data/avatar.sh >> ~/.bashrc
 
+apt install -y fortune-mod
+echo 'fortune' >> ~/.bashrc
+echo 'echo' >> ~/.bashrc
 
 prompt_line=$(grep -n '^#force_color_prompt=yes' ~/.bashrc | grep -o '^[[:digit:]]*')
 ps_line=`grep -n 'if \[ "$color_prompt" = yes \]; then' ~/.bashrc | grep -o '^[[:digit:]]*'`
