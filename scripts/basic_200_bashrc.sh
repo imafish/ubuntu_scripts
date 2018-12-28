@@ -3,6 +3,15 @@
 ########################################################
 # set up bashrc -- customized prompt
 
+
+cp ../data/block.txt ~/.block.txt
+echo 'if [ "$PS1" ]; then' >> ~/.bashrc
+echo '  cat .block.txt' >> ~/.bashrc
+echo '  echo' >> ~/.bashrc
+echo '  echo' >> ~/.bashrc
+echo 'fi' >> ~/.bashrc
+
+
 prompt_line=$(grep -n '^#force_color_prompt=yes' ~/.bashrc | grep -o '^[[:digit:]]*')
 ps_line=`grep -n 'if \[ "$color_prompt" = yes \]; then' ~/.bashrc | grep -o '^[[:digit:]]*'`
 if [ -n "$ps_line" ] && [ -n "$prompt_line" ]; then
