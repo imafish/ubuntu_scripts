@@ -4,7 +4,8 @@
 # set up bashrc -- customized prompt
 
 # show avatar
-cp ../data/block.txt ~/.block.txt
+cp ../data/avatar_256color.txt ~/.avatar_256color.txt
+cp ../data/avatar_8color.txt ~/.avatar_8color.txt
 cat ../data/avatar.sh >> ~/.bashrc
 
 apt install -y fortune-mod
