@@ -8,4 +8,7 @@ if [ "$PS1" ]; then
   else
     echo 'TODO placeholder -- ASCII art for 8 color console'
   fi
+
+  fortune
+  echo
 fi
