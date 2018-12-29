@@ -1,11 +1,11 @@
 
 # show avatar
 if [ "$PS1" ]; then
-  if [ `tput colors` -lt 9 ]; then
-    echo 'TODO placeholder -- ASCII art for 8 color console'
-  else
+  if [ `tput colors` -gt 255 ]; then
     cat ~/.block.txt
     echo
     echo
+  else
+    echo 'TODO placeholder -- ASCII art for 8 color console'
   fi
 fi
