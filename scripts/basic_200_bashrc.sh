@@ -7,6 +7,10 @@
 cp ../data/avatar_256color.txt ~/.avatar_256color.txt
 cp ../data/avatar_8color.txt ~/.avatar_8color.txt
 cat ../data/avatar.sh >> ~/.bashrc
+cat ../data/avatar.sh >> ~/.bash_profile
+
+# set colored prompt for login shells
+cat ../data/color_prompt.sh >> ~/.bash_profile
 
 apt install -y fortune-mod
 
@@ -32,3 +36,4 @@ else
   fi
   exit 255
 fi
+
