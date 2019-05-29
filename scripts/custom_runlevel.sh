@@ -3,7 +3,7 @@
 ## set default run level ##
 
 function usage() {
-  echo "$0 3|5    --- 3 for text mode, 5 for graphic mode"
+  echo "Usage: $0 3|5    --- 3 for text mode, 5 for graphic mode"
   exit 1
 }
 
