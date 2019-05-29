@@ -1,10 +1,10 @@
 #!/bin/bash
 
 #########################################################
-# install dev software
-echo "calling apt-get to install a few packages..."
+# install basic software
+echo "calling apt to install a few packages..."
 
-packages="../data/packages.txt"
+packages="../data/basic_packages.txt"
 if [ -f $packages ]; then
   echo "getting package list from packages.txt..."
   cat $packages

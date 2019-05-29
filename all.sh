@@ -12,6 +12,7 @@ echo "RESULTS:" >> ${tmpfile}
 
 
 ./basic.sh ${tmpfile}
+./desktop.sh ${tmpfile}
 ./dev.sh ${tmpfile}
 
 cat ${tmpfile}

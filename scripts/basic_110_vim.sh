@@ -2,8 +2,6 @@
 
 ########################################################
 # set up VIM
-apt-get -y install vim vim-gnome
-
 vimrc_path='../data/vimrc.txt'
 target_file=~/.vimrc
 if [ -f $vimrc_path ]; then
