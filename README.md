@@ -1,2 +1,2 @@
-# ubuntu_initialize_script
+# ubuntu_scripts
 script to customize my ubuntu
