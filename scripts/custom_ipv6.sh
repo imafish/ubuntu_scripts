@@ -21,10 +21,10 @@ change () {
   sysctl -p
 }
 
-if [ $1 == 'enable' ];then
+if [ "$1" == 'enable' ];then
   echo "enabling ipv6"
   change "0"
-elif [ $1 == 'disable' ];then
+elif [ "$1" == 'disable' ];then
   echo "disabling ipv6"
   change "1"
 else
