@@ -5,8 +5,7 @@ if [ -s $SUDO_USER ]; then
   exit 1
 fi
 
-tmpfile=""
-if [ -f $1 ]; then
+if [ -f "$1" ]; then
   tmpfile=$1
 else
   tmpfile=/tmp/`date +%s`.tmp
@@ -24,12 +23,12 @@ do
   exit_code=$?
   result="$script exited with code $exit_code"
   echo $result
-  echo $result >> ${tmpfile}
+  echo $result >> "${tmpfile}"
 done
 
-if [ $1 = "" ]; then
-  cat ${tmpfile}
-  rm ${tmpfile}
+if [ "$1" = "" ]; then
+  cat "${tmpfile}"
+  rm "${tmpfile}"
 fi
 
 cd ..
