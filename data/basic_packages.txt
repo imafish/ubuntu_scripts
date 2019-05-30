@@ -1,1 +1,1 @@
-vim byobu fortune build-essential openssh-server openssh-client ufw
+vim byobu fortune build-essential openssh-server openssh-client ufw docker
