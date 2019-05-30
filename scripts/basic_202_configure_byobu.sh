@@ -9,5 +9,7 @@ else
   echo already commented out.
 fi
 
+byobu-quiet
+
 echo done.
 
