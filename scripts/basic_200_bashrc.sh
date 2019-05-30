@@ -6,11 +6,19 @@
 # show avatar
 cp ../data/avatar_256color.txt ~/.avatar_256color.txt
 cp ../data/avatar_8color.txt ~/.avatar_8color.txt
-cat ../data/avatar.sh >> ~/.bashrc
-cat ../data/avatar.sh >> ~/.bash_profile
 
-# set colored prompt for login shells
-cat ../data/color_prompt.sh >> ~/.bash_profile
+if grep -q '#ubuntu_scripts#' ~/.bashrc; then
+  echo start up avatar already set.
+else
+  cat ../data/avatar.sh >> ~/.bashrc
+fi
+
+if [ -f ~/.bash_profile ] && grep -q '#ubuntu_scripts#' ~/.bash_profile; then
+  echo already set for .bash_profile
+else
+  cat ../data/avatar.sh >> ~/.bash_profile
+  cat ../data/color_prompt.sh >> ~/.bash_profile
+fi
 
 apt install -y fortune-mod
 

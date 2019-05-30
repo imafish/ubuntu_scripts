@@ -1,5 +1,5 @@
 
-# show avatar
+# show avatar #ubuntu_scripts#
 if [ "$PS1" ]; then
   if [ `tput colors` -gt 255 ]; then
     cat ~/.avatar_256color.txt
