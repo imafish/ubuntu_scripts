@@ -38,7 +38,7 @@ if [ -n "$ps_line" ] && [ -n "$prompt_line" ]; then
 else
   echo "Can't find the line to modify in file .bashrc"
   echo "Not changing .bashrc"
-  if [ -e $1 ]; then
+  if [ -e "$1" ]; then
     echo "Can't find the line to modify in file .bashrc" >> $1
     echo "Not changing .bashrc" >> $1
   fi
