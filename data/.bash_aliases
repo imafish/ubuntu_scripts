@@ -1,6 +1,11 @@
 alias v='view'
+alias less='less -R'
 alias df='df -h'
-alias ls='ls --color=auto'
 alias du='du -h'
+alias ll='ls -alFh'
 alias free='free -h'
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
 
