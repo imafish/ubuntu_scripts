@@ -8,6 +8,7 @@ packages="../data/basic_packages.txt"
 if [ -f $packages ]; then
   echo "getting package list from packages.txt..."
   cat $packages
+  apt update
   apt install -y $(cat $packages)
   exit
 else
