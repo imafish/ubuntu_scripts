@@ -2,7 +2,7 @@
 
 #########################################################
 # set up git
-git config --global user.name imafish.Guo
+git config --global user.name 'Guo Xiaobin'
 git config --global user.email imafish.i+git@gmail.com
 git config --global ui.color auto
 git config --global core.editor "vim"
