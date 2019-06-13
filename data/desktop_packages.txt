@@ -1,1 +1,1 @@
-variety byobu fortune-mod build-essential
+variety byobu fortune-mod build-essential xpad
