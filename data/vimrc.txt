@@ -1,26 +1,5 @@
-au BufRead,BufNewFile *.rb     set shiftwidth=2
-au BufRead,BufNewFile *.rb     set tabstop=2
-
-au BufRead,BufNewFile *.h     set shiftwidth=2
-au BufRead,BufNewFile *.h     set tabstop=2
-
-au BufRead,BufNewFile *.hpp     set shiftwidth=2
-au BufRead,BufNewFile *.hpp     set tabstop=2
-
-au BufRead,BufNewFile *.c     set shiftwidth=2
-au BufRead,BufNewFile *.c     set tabstop=2
-
-au BufRead,BufNewFile *.cpp     set shiftwidth=2
-au BufRead,BufNewFile *.cpp     set tabstop=2
-
-au BufRead,BufNewFile *.cc     set shiftwidth=2
-au BufRead,BufNewFile *.cc     set tabstop=2
-
-au BufRead,BufNewFile *.java     set shiftwidth=2
-au BufRead,BufNewFile *.java     set tabstop=2
-
-au BufRead,BufNewFile *.sh     set shiftwidth=2
-au BufRead,BufNewFile *.sh     set tabstop=2
+set shiftwidth=2
+set tabstop=2
 
 set background=dark
 set smarttab
