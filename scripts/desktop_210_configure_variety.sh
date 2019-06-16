@@ -8,4 +8,4 @@ source_file=../data/variety.conf
 target_file=~/.config/variety/variety.conf
 
 cp $source_file $target_file
-
+chown $USER:$USER $target_file
