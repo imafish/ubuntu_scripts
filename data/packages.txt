@@ -1,1 +1,1 @@
-build-essential python2.7-dev zlib1g-dev ruby1.9.1-full cmake git gitk git-gui subversion mysql-client mysql-server php5 php5-mysql php5-ldap lynx curl
+build-essential python2.7-dev zlib1g-dev ruby1.9.1-full cmake git gitk git-gui subversion mysql-client mysql-server php5 php5-mysql php5-ldap lynx curl docker-compose
