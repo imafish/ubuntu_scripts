@@ -1,1 +1,1 @@
-vim byobu fortune-mod build-essential openssh-server openssh-client ufw docker.io docker-compose curl lynx
+vim byobu fortune-mod openssh-server openssh-client ufw docker.io docker-compose curl lynx git
