@@ -8,10 +8,15 @@ source_file=../data/variety.conf
 target_dir=~/.config/variety
 target_file=$target_dir/variety.conf
 
+if [ -z "$SUDO_USER" ]; then
+  echo "must run as sudo"
+  exit 255
+fi
+
 if [ ! -d $target_dir ]; then
   mkdir -p $target_dir
-  chown -R $USER:$USER ~/.config
+  chown -R $SUDO_USER:$SUDO_USER ~/.config
 fi
 
 cp $source_file $target_file
-chown $USER:$USER $target_file
+chown -R $SUDO_USER:$SUDO_USER ~/.config

@@ -11,6 +11,7 @@ if [ -f ${source_file} ]; then
   ./helper_make_backup.sh ${target_file}
 
   cp -p ${source_file} ${target_file}
+  chown $SUDO_USER:$SUDO_USER $target_file
   exit
 else
   echo "File ${source_file} Not found"
