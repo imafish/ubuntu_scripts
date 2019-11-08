@@ -32,7 +32,7 @@ if [ -n "$ps_line" ] && [ -n "$prompt_line" ]; then
   ./helper_make_backup.sh ~/.bashrc
 
   sed -i 's/^#force_color_prompt=yes/force_color_prompt=yes/' ~/.bashrc
-  sed -i "$ps_line"c\\"    PS1='\\\\[\\\\e[32m.\\\\n.\\\\]\\\\e[0m "'${debian_chroot:+($debian_chroot)}'"\\\\u@\\\\h: \\\\w\\\\[\\\\e[33m\\\\]"'$(__git_ps1 2>/dev/null)'"\\\\n\\\\[\\\\e[35;1m\\\\]>\\\\[\\\\e[0m\\\\] '" ~/.bashrc
+  sed -i "$ps_line"c\\"    PS1='\\\\[\\\\e[36m.\\\\n.\\\\]\\\\e[0m "'${debian_chroot:+($debian_chroot)}'"\\\\u@\\\\h: \\\\w\\\\[\\\\e[33m\\\\]"'$(__git_ps1 2>/dev/null)'"\\\\n\\\\[\\\\e[31;1m\\\\]>\\\\[\\\\e[0m\\\\] '" ~/.bashrc
 
   exit
 else
