@@ -20,8 +20,6 @@ else
   cat ../data/color_prompt.sh >> ~/.bash_profile
 fi
 
-apt install -y fortune-mod
-
 prompt_line=$(grep -n '^#force_color_prompt=yes' ~/.bashrc | grep -o '^[[:digit:]]*')
 ps_line=`grep -n 'if \[ "$color_prompt" = yes \]; then' ~/.bashrc | grep -o '^[[:digit:]]*'`
 if [ -n "$ps_line" ] && [ -n "$prompt_line" ]; then
