@@ -6,7 +6,7 @@ else
   tmpfile=/tmp/`date +%s`.tmp
 fi
 
-# run all script under scripts/basic_*.sh
+# run all script under scripts/noroot_basic_*.sh
 cd scripts
 for script in ./noroot_basic_*.sh
 do
@@ -27,8 +27,11 @@ do
 done
 
 if [ "$1" = "" ]; then
-  cat "${tmpfile}"
-  rm "${tmpfile}"
+    echo
+    echo
+    echo
+    cat "${tmpfile}"
+    rm "${tmpfile}"
 fi
 
 cd ..
