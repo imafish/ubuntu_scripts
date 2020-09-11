@@ -13,6 +13,7 @@ echo "RESULTS:" >> ${tmpfile}
 
 ./basic.sh ${tmpfile}
 ./desktop.sh ${tmpfile}
+./noroot_basic.sh ${tmpfile}
 
 cat ${tmpfile}
 rm ${tmpfile}

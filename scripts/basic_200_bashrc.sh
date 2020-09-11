@@ -4,32 +4,35 @@
 # set up bashrc -- customized prompt
 
 # show avatar
-cp ../data/avatar_256color.txt ~/.avatar_256color.txt
-cp ../data/avatar_8color.txt ~/.avatar_8color.txt
+cp ../data/avatar_256color.txt $HOME/.avatar_256color.txt
+cp ../data/avatar_8color.txt $HOME/.avatar_8color.txt
 
-if grep -q '#ubuntu_scripts#' ~/.bashrc; then
+BASHRC=$HOME/.bashrc
+BASHPROFILE=$HOME/.bash_profile
+
+if grep -q '#ubuntu_scripts#' $BASHRC; then
   echo start up avatar already set.
 else
-  cat ../data/avatar.sh >> ~/.bashrc
+  cat ../data/avatar.sh >> $BASHRC
 fi
 
-if [ -f ~/.bash_profile ] && grep -q '#ubuntu_scripts#' ~/.bash_profile; then
+if [ -f $BASHPROFILE ] && grep -q '#ubuntu_scripts#' $HOME/.bash_profile; then
   echo already set for .bash_profile
 else
-  cat ../data/avatar.sh >> ~/.bash_profile
-  cat ../data/color_prompt.sh >> ~/.bash_profile
+  cat ../data/avatar.sh >> $BASHPROFILE
+  cat ../data/color_prompt.sh >> $BASHPROFILE
 fi
 
-prompt_line=$(grep -n '^#force_color_prompt=yes' ~/.bashrc | grep -o '^[[:digit:]]*')
-ps_line=`grep -n 'if \[ "$color_prompt" = yes \]; then' ~/.bashrc | grep -o '^[[:digit:]]*'`
+prompt_line=$(grep -n '^#force_color_prompt=yes' $BASHRC | grep -o '^[[:digit:]]*')
+ps_line=`grep -n 'if \[ "$color_prompt" = yes \]; then' $BASHRC | grep -o '^[[:digit:]]*'`
 if [ -n "$ps_line" ] && [ -n "$prompt_line" ]; then
   ps_line=$(expr $ps_line + 1)
   echo Found color prompt settings at line $ps_line and $prompt_line
 
   # make backup:
-  ./helper_make_backup.sh ~/.bashrc
+  ./helper_make_backup.sh $BASHRC
 
-  sed -i 's/^#force_color_prompt=yes/force_color_prompt=yes/' ~/.bashrc
+  sed -i 's/^#force_color_prompt=yes/force_color_prompt=yes/' $BASHRC
   sed -i "$ps_line"c\\"    PS1='\\\\[\\\\e[36m.\\\\n.\\\\]\\\\e[0m "'${debian_chroot:+($debian_chroot)}'"\\\\u@\\\\h: \\\\w\\\\[\\\\e[33m\\\\]"'$(__git_ps1 2>/dev/null)'"\\\\n\\\\[\\\\e[31;1m\\\\]>\\\\[\\\\e[0m\\\\] '" ~/.bashrc
 
   exit

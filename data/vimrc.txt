@@ -1,16 +1,32 @@
-set shiftwidth=2
-set tabstop=2
-
-set background=dark
-set smarttab
+" tabs and spaces
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+set sw=4
 set expandtab
+set autoindent
+set smartindent
+filetype plugin indent on
+
+" display
+set ruler
+set number
+set hlsearch
+set showmatch
+set cin
+syntax on
+colorscheme desert
+
+" control
 set mouse=a
 set nocompatible
-set nu
-set hlsearch
-syntax on
-filetype plugin indent on
-colorscheme desert
+set whichwrap+=<,>,h,l
+
+" file encoding
+set encoding=utf-8
+set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936
+set fileencoding=utf-8
+
 
 augroup filetype
   au! BufRead,BufNewFile,BufEnter *Makefile*,*makefile*,*.mk set filetype=make
