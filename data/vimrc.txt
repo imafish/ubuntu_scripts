@@ -29,6 +29,8 @@ set smartindent
 set cin
 set showmatch
 
+set hlsearch
+set incsearch
 
 if has("gui_running")
     if has("gui_gtk2")
