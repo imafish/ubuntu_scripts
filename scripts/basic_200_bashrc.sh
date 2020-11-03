@@ -3,12 +3,18 @@
 ########################################################
 # set up bashrc -- customized prompt
 
-# show avatar
-cp ../data/avatar_256color.txt $HOME/.avatar_256color.txt
-cp ../data/avatar_8color.txt $HOME/.avatar_8color.txt
+if [ -z $SUDO_USER ]; then
+    $REAL_HOME=/home/$SUDO_USER
+else
+    $REAL_HOME=$REAL_HOME
+fi
 
-BASHRC=$HOME/.bashrc
-BASHPROFILE=$HOME/.bash_profile
+# show avatar
+cp -p ../data/avatar_256color.txt $REAL_HOME/.avatar_256color.txt
+cp -p ../data/avatar_8color.txt $REAL_HOME/.avatar_8color.txt
+
+BASHRC=$REAL_HOME/.bashrc
+BASHPROFILE=$REAL_HOME/.bash_profile
 
 if grep -q '#ubuntu_scripts#' $BASHRC; then
   echo start up avatar already set.
@@ -16,7 +22,7 @@ else
   cat ../data/avatar.sh >> $BASHRC
 fi
 
-if [ -f $BASHPROFILE ] && grep -q '#ubuntu_scripts#' $HOME/.bash_profile; then
+if [ -f $BASHPROFILE ] && grep -q '#ubuntu_scripts#' $BASHPROFILE; then
   echo already set for .bash_profile
 else
   cat ../data/avatar.sh >> $BASHPROFILE
