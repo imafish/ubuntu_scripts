@@ -24,5 +24,5 @@ fi
 echo "" >> $REAL_HOME/.bash_profile
 echo "export LESS=-R" >> $REAL_HOME/.bash_profile
 echo "export -n LESSCLOSE" >> $REAL_HOME/.bash_profile
-echo "export LESSOPEN=\"\| ~/bin/lessfilter.sh %s\"" >> $REAL_HOME/.bash_profile
+echo "export LESSOPEN=\"| ~/bin/lessfilter.sh %s\"" >> $REAL_HOME/.bash_profile
 
