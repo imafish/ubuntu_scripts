@@ -21,8 +21,11 @@ fi
 ./helper_cp.sh ../data/lessfilter.sh $REAL_HOME/bin/lessfilter.sh
 
 
-echo "" >> $REAL_HOME/.bash_profile
-echo "export LESS=-R" >> $REAL_HOME/.bash_profile
-echo "export -n LESSCLOSE" >> $REAL_HOME/.bash_profile
-echo "export LESSOPEN=\"| ~/bin/lessfilter.sh %s\"" >> $REAL_HOME/.bash_profile
+echo "" >> $REAL_HOME/.bashrc
+echo "export LESS=-R" >> $REAL_HOME/.bashrc
+echo "export -n LESSCLOSE" >> $REAL_HOME/.bashrc
+echo "export LESSOPEN=\"| ~/bin/lessfilter.sh %s\"" >> $REAL_HOME/.bashrc
+
+# remove use of lesspipe in bashrc
+sed -i -E 's/^([^#].*lesspipe)/#\1/' $REAL_HOME/.bashrc
 
