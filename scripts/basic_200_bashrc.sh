@@ -3,10 +3,10 @@
 ########################################################
 # set up bashrc -- customized prompt
 
-if [ -n $SUDO_USER ]; then
-    $REAL_HOME=/home/$SUDO_USER
+if [ -n "$SUDO_USER" ]; then
+    REAL_HOME=/home/$SUDO_USER
 else
-    $REAL_HOME=$HOME
+    REAL_HOME=$HOME
 fi
 
 # show avatar
@@ -22,10 +22,9 @@ else
   cat ../data/avatar.sh >> $BASHRC
 fi
 
-# let's replace .profile by .bash_profile
-if [ -f $REAL_HOME/.profile ] && [ ! -e $BASHPROFILE ]; then
-    echo replace .profile by .bash_profile
-    mv $REAL_HOME/.profile $BASHPROFILE
+# Let's create .bash_profile if it doesn't exist
+if [ ! -e $BASHPROFILE ]; then
+    ./helper_cp.sh ../data/profile.sh $BASHPROFILE
 fi
 
 if [ -f $BASHPROFILE ] && grep -q '#ubuntu_scripts#' $BASHPROFILE; then
