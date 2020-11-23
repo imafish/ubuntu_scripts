@@ -29,3 +29,4 @@ echo "export LESSOPEN=\"| ~/bin/lessfilter.sh %s\"" >> $REAL_HOME/.bashrc
 # remove use of lesspipe in bashrc
 sed -i -E 's/^([^#].*lesspipe)/#\1/' $REAL_HOME/.bashrc
 
+echo "alias lessno=\"less --no-lessopen\"" >> $REAL_HOME/.bashrc
