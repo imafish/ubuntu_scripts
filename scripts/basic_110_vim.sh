@@ -17,3 +17,9 @@ else
   echo "ERROR: file $vimrc_path not found"
   exit 255
 fi
+
+# invoke vim to install plugins
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+vim +PlugInstall +qall
+
