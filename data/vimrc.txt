@@ -152,7 +152,7 @@ nmap <C-M> :bn<CR>
 nmap <leader>q :bd<CR>
 
 " show file system tree
-nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <leader>b :NERDTreeToggle<CR>
 
 augroup autoformat_settings
     autocmd FileType bzl AutoFormatBuffer buildifier

@@ -21,7 +21,7 @@ BASHPROFILE=$REAL_HOME/.bash_profile
 PLACEHOLDER="#ubuntu_scripts#"
 
 if grep -q "$PLACEHOLDER" $BASHRC; then
-    
+    echo ""
 else
     echo "$PLACEHOLDER" >> $BASHRC
     echo '[ -f $HOME/.my_bashrc.sh ] && source $HOME/.my_bashrc.sh' >> $BASHRC
@@ -32,7 +32,7 @@ if [ ! -e $BASHPROFILE ]; then
     ./helper_cp.sh ../data/bash_profile.sh $BASHPROFILE
 else
     if grep -q "$PLACEHOLDER" $BASHPROFILE; then
-
+        echo ""
     else
         echo "$PLACEHOLDER" >> $BASHPROFILE
         echo '[ -f $HOME/.my_bash_profile.sh ] && source $HOME/.my_bash_profile.sh' >> $BASHPROFILE

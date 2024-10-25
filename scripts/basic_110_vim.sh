@@ -8,6 +8,10 @@ if [ ! -z $SUDO_USER ]; then
     HOME=/home/$SUDO_USER
 fi
 
+mkdir -p $HOME/.tmp/vimswap
+mkdir -p $HOME/.tmp/vimbackup
+mkdir -p $HOME/.tmp/vimundo
+
 target_file=$HOME/.vimrc
 if [ -f $vimrc_path ]; then
   ./helper_make_backup.sh ${target_file}
