@@ -1,1 +1,1 @@
-vim byobu fortune-mod openssh-server openssh-client ufw docker.io docker-compose curl lynx git python3-pygments
+vim byobu fortune-mod openssh-server openssh-client ufw docker.io curl lynx git python3-pygments docker-buildx
