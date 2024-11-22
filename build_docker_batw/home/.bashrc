@@ -69,6 +69,8 @@ export DOCKERREPO=common.artifactory.cc.bmwgroup.net/external-docker-io
 export BAPROXY=http://10.114.26.34:3128
 export BASOCKS5=socks5://10.114.26.34:1080
 alias proxy="http_proxy=$BAPROXY https_proxy=$BAPROXY all_proxy=$BASOCKS5"
+alias proxyup="export ALL_PROXY=$BASOCKS5 && export all_proxy=$BASOCKS5 && export HTTP_PROXY=$BAPROXY && export http_proxy=$BAPROXY && export https_proxy=$BAPROXY && export HTTPS_PROXY=$BAPROXY"
+alias proxydown="unset ALL_PROXY && unset HTTP_PROXY && unset HTTPS_PROXY && unset all_proxy && unset http_proxy && unset https_proxy"
 
 # add HOME/bin to PATH
 export PATH=$PATH:$HOME/bin
