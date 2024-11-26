@@ -11,12 +11,12 @@ set foldenable
 set foldmethod=manual
 
 set expandtab
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set smarttab
 set autoindent
-set sw=4
+set sw=2
 
 set ruler
 set whichwrap+=<,>,h,l

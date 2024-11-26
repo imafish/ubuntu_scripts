@@ -16,11 +16,27 @@ RUN echo "imafish ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers
 USER imafish
 WORKDIR /home/imafish
 COPY home/.vimrc .vimrc
+
+# setting up proxy to install vim plugins, go and bazelisk
+ARG PROXY=
+ENV ALL_PROXY=$PROXY
 # install VIM plugins
 RUN curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
     && vim +PlugInstall +qall
+# install go
+WORKDIR /home/imafish/tmp
+COPY install_go.sh .
+RUN /bin/bash install_go.sh
+RUN rm install_go.sh
+RUN /usr/local/go/bin/go env -w GOPROXY="https://goproxy.cn,direct"
+# install bazelisk
+RUN /usr/local/go/bin/go install github.com/bazelbuild/bazelisk@latest
+# tear down proxy and reset work directory
+ENV ALL_PROXY=
+WORKDIR /home/imafish
 
+# copy the rest of the files
 COPY home/\\.* .
 COPY home/bin bin
 RUN rm -rf tmp
@@ -31,18 +47,3 @@ RUN rm sfiles.tar.gz
 RUN sudo chown -R imafish:imafish /home/imafish
 RUN chmod 600 /home/imafish/.ssh/id_rsa
 
-ARG PROXY=
-ENV ALL_PROXY=$PROXY
-
-# install go
-WORKDIR /home/imafish/tmp
-COPY install_go.sh .
-RUN /bin/bash install_go.sh
-RUN rm install_go.sh
-RUN /usr/local/go/bin/go env -w GOPROXY="https://goproxy.cn,direct"
-
-# install bazelisk
-RUN /usr/local/go/bin/go install github.com/bazelbuild/bazelisk@latest
-
-WORKDIR /home/imafish
-ENV ALL_PROXY=

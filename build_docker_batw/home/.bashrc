@@ -46,6 +46,9 @@ if [ "$PS1" ]; then
   echo
 fi
 
+# set up git prompt
+if [[ -f /etc/bash_completion.d/git-prompt ]]; then source /etc/bash_completion.d/git-prompt; fi
+
 # easy access for python3
 alias p3=python3
 
@@ -62,9 +65,6 @@ export PATH=$PATH:/usr/local/go/bin/:/home/imafish/go/bin/
 # FOR BATW/BMW related
 export DOCKERREPO=common.artifactory.cc.bmwgroup.net/external-docker-io
 
-# prompt user to change their password
-./.first_time.sh
-
 # BA proxy
 export BAPROXY=http://10.114.26.34:3128
 export BASOCKS5=socks5://10.114.26.34:1080
@@ -77,3 +77,7 @@ export PATH=$PATH:$HOME/bin
 
 # alias for bazel
 alias bazel=bazelisk
+
+# prompt user to change their password
+./.first_time.sh
+
