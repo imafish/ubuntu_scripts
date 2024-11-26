@@ -6,8 +6,8 @@ RUN echo "imafish:123" | chpasswd
 
 # install packages
 RUN apt-get update && \
-    apt-get install -y --install-recommends python3 build-essential iputils-ping curl net-tools fortune \
-               git vim byobu clang-format cmake sudo nodejs npm && \
+    apt-get install -y --install-recommends build-essential iputils-ping curl net-tools fortune \
+               git vim byobu clang-format cmake sudo nodejs npm python3-full python3-pip && \
     rm -rf /var/lib/apt/lists/*
 
 # disable password requirement with using sudo
@@ -29,6 +29,7 @@ RUN tar xzvf sfiles.tar.gz
 RUN rm sfiles.tar.gz
 
 RUN sudo chown -R imafish:imafish /home/imafish
+RUN chmod 600 /home/imafish/.ssh/id_rsa
 
 ARG PROXY=
 ENV ALL_PROXY=$PROXY
