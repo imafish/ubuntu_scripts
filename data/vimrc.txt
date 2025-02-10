@@ -1,22 +1,57 @@
 syntax on
-set number
-set nocompatible
-set backspace=indent,eol,start
+
+call plug#begin('~/.vim/plugged')
+Plug 'bfrg/vim-cpp-modern'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'google/vim-maktaba'
+Plug 'google/vim-codefmt'
+Plug 'google/vim-glaive'
+Plug 'ap/vim-buftabline'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mileszs/ack.vim'
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'fatih/vim-hclfmt'
+Plug 'beautify-web/js-beautify'
+Plug 'preservim/nerdtree'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'morhetz/gruvbox'
+call plug#end()
 
 filetype on
 filetype plugin on
 filetype indent on
 
+set background=dark
+colorscheme PaperColor
+
+set mouse=a
+
+set nu
+set hidden
+
+" setup backup files and swap files
+set backup
+set swapfile
+set directory=$HOME/.tmp/vimswap
+set backupdir=$HOME/.tmp/vimbackup
+set undodir=$HOME/.tmp/vimundo
+
+set number
+set nocompatible
+set backspace=indent,eol,start
+
 set foldenable
 set foldmethod=manual
 
 set expandtab
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
 set smarttab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set autoindent
-set sw=4
+set smartindent
+set sw=2
 
 set ruler
 set whichwrap+=<,>,h,l
@@ -25,12 +60,39 @@ set encoding=utf-8
 set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936
 set fileencoding=utf-8
 
-set smartindent
 set cin
 set showmatch
 
 set hlsearch
 set incsearch
+set ignorecase
+set smartcase
+
+" default leader key is backslash '\'
+let mapleader=";"
+
+" Next buffer & Previous buffer
+nmap <C-N> :bp<CR>
+nmap <C-M> :bn<CR>
+" Close current buffer
+nmap <leader>q :bd<CR>
+
+" show file system tree
+nnoremap <leader>b :NERDTreeToggle<CR>
+
+augroup autoformat_settings
+    autocmd FileType bzl AutoFormatBuffer buildifier
+    autocmd FileType c,cc,cpp,proto,javascript AutoFormatBuffer clang-format
+    autocmd FileType dart AutoFormatBuffer dartfmt
+    autocmd FileType go AutoFormatBuffer gofmt
+    autocmd FileType gn AutoFormatBuffer gn
+    autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
+    " autocmd FileType java AutoFormatBuffer google-java-format
+    " autocmd FileType python AutoFormatBuffer yapf
+    autocmd FileType python AutoFormatBuffer autopep8
+    autocmd FileType rust AutoFormatBuffer rustfmt
+    autocmd FileType vue AutoFormatBuffer prettier
+augroup END
 
 if has("gui_running")
     if has("gui_gtk2")
@@ -47,11 +109,8 @@ if has("gui_running")
     map <C-S-Tab> gT
     map <C-S> :w<CR>
 
-    colorscheme gruvbox
-endif
+    colorscheme morning
 
-
-if has("gui_running")
     function! ScreenFilename()
         if has('amiga')
             return "s:.vimsize"
@@ -108,64 +167,3 @@ if has("gui_running")
     autocmd VimEnter * if g:screen_size_restore_pos == 1 | call ScreenRestore() | endif
     autocmd VimLeavePre * if g:screen_size_restore_pos == 1 | call ScreenSave() | endif
 endif
-
-call plug#begin('~/.vim/plugged')
-Plug 'bfrg/vim-cpp-modern'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'google/vim-maktaba'
-Plug 'google/vim-codefmt'
-Plug 'google/vim-glaive'
-Plug 'ap/vim-buftabline'
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mileszs/ack.vim'
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'fatih/vim-hclfmt'
-Plug 'beautify-web/js-beautify'
-Plug 'preservim/nerdtree'
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'morhetz/gruvbox'
-call plug#end()
-
-set mouse=a
-
-set nu
-set hidden
-set autoindent expandtab smartindent
-set ignorecase smartcase
-set hlsearch
-
-" setup backup files and swap files
-set backup
-set swapfile
-set directory=$HOME/.tmp/vimswap
-set backupdir=$HOME/.tmp/vimbackup
-set undodir=$HOME/.tmp/vimundo
-
-
-" default leader key is backslash '\'
-let mapleader=";"
-
-" Next buffer & Previous buffer
-nmap <C-N> :bp<CR>
-nmap <C-M> :bn<CR>
-" Close current buffer
-nmap <leader>q :bd<CR>
-
-" show file system tree
-nnoremap <leader>b :NERDTreeToggle<CR>
-
-augroup autoformat_settings
-    autocmd FileType bzl AutoFormatBuffer buildifier
-    autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
-    autocmd FileType dart AutoFormatBuffer dartfmt
-    autocmd FileType go AutoFormatBuffer gofmt
-    autocmd FileType gn AutoFormatBuffer gn
-    autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
-    " autocmd FileType java AutoFormatBuffer google-java-format
-    " autocmd FileType python AutoFormatBuffer yapf
-    autocmd FileType python AutoFormatBuffer autopep8
-    autocmd FileType rust AutoFormatBuffer rustfmt
-    autocmd FileType vue AutoFormatBuffer prettier
-augroup END
-
