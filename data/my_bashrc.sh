@@ -41,3 +41,5 @@ export -n LESSCLOSE
 export LESSOPEN="| ~/bin/lessfilter.sh %s" 
 alias lessno="less --no-lessopen" 
 
+# FOR GO
+export PATH=$PATH:$HOME/go/bin/

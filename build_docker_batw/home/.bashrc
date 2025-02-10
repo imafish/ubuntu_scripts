@@ -60,7 +60,7 @@ alias ct='cd ~/tmp'
 alias cs='cd ~/src'
 
 # FOR GO
-export PATH=$PATH:/usr/local/go/bin/:/home/imafish/go/bin/
+export PATH=$PATH:/usr/local/go/bin/:$HOME/go/bin/
 
 # FOR BATW/BMW related
 export DOCKERREPO=common.artifactory.cc.bmwgroup.net/external-docker-io
@@ -73,7 +73,7 @@ alias proxyup="export ALL_PROXY=$BASOCKS5 && export all_proxy=$BASOCKS5 && expor
 alias proxydown="unset ALL_PROXY && unset HTTP_PROXY && unset HTTPS_PROXY && unset all_proxy && unset http_proxy && unset https_proxy"
 
 # add HOME/bin to PATH
-export PATH=$PATH:$HOME/bin
+export PATH=$HOME/bin:$PATH
 
 # alias for bazel
 alias bazel=bazelisk

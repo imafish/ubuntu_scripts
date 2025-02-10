@@ -47,7 +47,7 @@ if has("gui_running")
     map <C-S-Tab> gT
     map <C-S> :w<CR>
 
-    colorscheme morning
+    colorscheme gruvbox
 endif
 
 
@@ -124,6 +124,7 @@ Plug 'fatih/vim-hclfmt'
 Plug 'beautify-web/js-beautify'
 Plug 'preservim/nerdtree'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 set mouse=a
